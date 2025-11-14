@@ -5,7 +5,7 @@
 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template for a Python package.
 
-*   GitHub repo: [https://github.com/audreyfeldroy/cookiecutter-pypackage/](https://github.com/audreyfeldroy/cookiecutter-pypackage/)
+*   GitHub repo: [https://github.com/fbicknel/cookiecutter-pypackage/](https://github.com/fbicknel/cookiecutter-pypackage/)
 *   Free software: MIT license
 *   Discord: [https://discord.gg/PWXJr3upUE](https://discord.gg/PWXJr3upUE)
 
@@ -27,7 +27,7 @@ pip install -U cookiecutter
 Generate a Python package project:
 
 ```bash
-cookiecutter https://github.com/audreyfeldroy/cookiecutter-pypackage.git
+cookiecutter https://github.com/fbicknel/cookiecutter-pypackage.git
 ```
 
 Then:
@@ -49,7 +49,7 @@ be a fork.
 
 ### Similar Cookiecutter Templates
 
-Explore other forks to get ideas. See the [network](https://github.com/audreyfeldroy/cookiecutter-pypackage/network) and [family tree](https://github.com/audreyfeldroy/cookiecutter-pypackage/network/members) for this repo.
+Explore other forks to get ideas. See the [network](https://github.com/fbicknel/cookiecutter-pypackage/network) and [family tree](https://github.com/fbicknel/cookiecutter-pypackage/network/members) for this repo.
 
 ### Or Submit a Pull Request
 
