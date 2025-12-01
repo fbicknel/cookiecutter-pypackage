@@ -2,10 +2,10 @@
   "full_name": "Frank Bicknell",
   "email": "frank.bicknell@gtri.gatech.edu",
   "github_username": "jbicknell3",
-  "pypi_package_name": "python-boilerplate",
-  "project_name": "Python Boilerplate",
+  "pypi_package_name": "change-me-now",
+  "project_name": "Change Me",
   "project_slug": "{{ cookiecutter.pypi_package_name.replace('-', '_') }}",
-  "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+  "project_short_description": "Change me immediately.",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "first_version": "0.0.0",
   "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
