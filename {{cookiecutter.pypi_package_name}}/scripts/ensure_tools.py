@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys, subprocess
 
-need = ["pipdeptree", "pip-tools", "tox"]
+need = ["pipdeptree", "pip-tools", "tox", "pytest"]
 out = subprocess.run([sys.executable, "-m", "pip", "list", "--format=freeze"],
                      capture_output=True, text=True).stdout
 installed = {line.split("==")[0].lower() for line in out.splitlines() if "==" in line}
