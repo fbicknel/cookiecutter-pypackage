@@ -59,6 +59,53 @@ clean:
 	rm -f $(FREEZE) $(DIRECT) $(REQ_IN) $(REQ_TXT)
 	rm -rf $(DIST_DIR) *.egg-info
 
-## foo
 very-clean: clean
 	rm -fr data build
+
+# =========================
+# Requirements
+# =========================
+
+requirements.txt: requirements.in
+	pip-compile --upgrade $<
+
+dev-requirements.txt: dev-requirements.in
+	pip-compile --upgrade $<
+
+.PHONY: requirements dev-requirements dev test build run
+
+requirements: requirements.txt
+	pip install --upgrade pip
+	pip install -r requirements.txt
+
+dev-requirements: dev-requirements.txt
+	pip install --upgrade pip
+	pip install -r dev-requirements.txt
+
+# =========================
+# Development environment
+# =========================
+
+dev: requirements dev-requirements
+	pip install -e .
+
+# =========================
+# Testing
+# =========================
+
+test:
+	pytest -v
+
+# =========================
+# Build
+# =========================
+
+build:
+	python -m build
+
+# =========================
+# Run CLI
+# =========================
+
+run:
+	python -m contact_importer.cli
