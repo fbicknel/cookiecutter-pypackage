@@ -1,6 +1,6 @@
 .PHONY: build-wheel install-wheel install-dev uninstall-wheel clean very-clean help
 
-PACKAGE_NAME := {% cookiecutter.project_name %}
+PACKAGE_NAME := {{ cookiecutter.project_name }}
 DIST_DIR := dist
 
 build-wheel:
@@ -39,7 +39,7 @@ top-level:
 # build an unpinned requirements.in (names only) and preserve editable/local lines from freeze
 make-unpinned: freeze top-level
 	# keep editable/local lines from pip freeze
-	grep -E '(^-e |@ file://|^{% cookiecutter.project_name %}|^\\-e )' $(FREEZE) > local-lines.tmp || true
+	grep -E '(^-e |@ file://|^{{ cookiecutter.project_name }}|^\\-e )' $(FREEZE) > local-lines.tmp || true
 	# strip versions from top-level names
 	sed 's/==.*//' $(DIRECT) > names-unpinned.tmp
 	cat local-lines.tmp > $(REQ_IN)
@@ -50,7 +50,7 @@ make-unpinned: freeze top-level
 # produce a pinned requirements.txt containing exact versions for top-level packages + editable/local lines
 make-pinned: freeze top-level
 	grep -F -f $(DIRECT) $(FREEZE) > $(REQ_TXT) || true
-	grep -E '(^-e |@ file://|^{% cookiecutter.project_name %}|^\\-e )' $(FREEZE) >> $(REQ_TXT) || true
+	grep -E '(^-e |@ file://|^{{ cookiecutter.project_name }}|^\\-e )' $(FREEZE) >> $(REQ_TXT) || true
 	# optional: sort/unique while keeping editable lines at top
 	awk '/^-e/ {print; next} {print | "sort -u"}' $(REQ_TXT) > $(REQ_TXT).tmp || true
 	mv $(REQ_TXT).tmp $(REQ_TXT) || true
